@@ -12,8 +12,8 @@ public class Test1 {
         Nerve nerve = new Nerve();
         SkeletalMuscle muscle = new SkeletalMuscle();
 
-        nerve.setSource(nucl);
-        nerve.setTarget(muscle);
+        nerve.addSource(nucl);
+        nerve.addTarget(muscle);
 
         nucl.stimulate();
 

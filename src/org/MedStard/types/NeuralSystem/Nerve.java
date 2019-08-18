@@ -1,40 +1,40 @@
 package org.MedStard.types.NeuralSystem;
 
+import java.util.Vector;
+
 import org.MedStard.types.AbstractTypes.Excitable;
 
 public class Nerve implements Excitable {
-    private NerveSource source;
-    private NerveTarget target;
-
-    public Nerve(NerveSource source, NerveTarget target) {
-        this.source = source;
-        this.target = target;
-    }
+    private Vector<NerveSource> sources;
+    private Vector<NerveTarget> targets;
 
     public Nerve() {
-
+    	sources = new Vector<NerveSource>();
+    	targets = new Vector<NerveTarget>();
     }
 
-    public NerveSource getSource() {
-        return source;
+    public Vector<NerveSource> getSource() {
+        return sources;
     }
 
-    public void setSource(NerveSource newSource) {
-        source = newSource;
-        source.addToOutputNerves(this);
+    public void addSource(NerveSource newSource) {
+    	sources.add(newSource);
+    	newSource.addToOutputNerves(this);
     }
 
-    public NerveTarget getTarget() {
-        return target;
+    public Vector<NerveTarget> getTarget() {
+        return targets;
     }
 
-    public void setTarget(NerveTarget newTarget) {
-        target = newTarget;
-        target.addToInputNerves(this);
+    public void addTarget(NerveTarget newTarget) {
+        targets.add(newTarget);
+        newTarget.addToInputNerves(this);
     }
 
     @Override
     public void stimulate() {
-        target.stimulate();
+    	for (NerveTarget t : targets) {
+    		t.stimulate();
+    	}
     }
 }

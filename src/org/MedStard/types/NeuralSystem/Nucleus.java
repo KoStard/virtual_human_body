@@ -2,7 +2,6 @@ package org.MedStard.types.NeuralSystem;
 
 import org.MedStard.types.AbstractTypes.Excitable;
 
-import java.util.Iterator;
 import java.util.Vector;
 
 public class Nucleus implements Excitable, NerveSource, NerveTarget {
@@ -38,7 +37,7 @@ public class Nucleus implements Excitable, NerveSource, NerveTarget {
 
     @Override
     public Nerve[] getOutputNerves() {
-        return outputNerves.toArray(Nerve[]::new);
+        return outputNerves.toArray(new Nerve[outputNerves.size()]);
     }
 
     @Override
@@ -50,4 +49,9 @@ public class Nucleus implements Excitable, NerveSource, NerveTarget {
     public void removeFromInputNerves(Nerve nerve) {
         inputNerves.remove(nerve);
     }
+
+	@Override
+	public Nerve[] getInputNerves() {
+		return inputNerves.toArray(new Nerve[inputNerves.size()]);
+	}
 }

@@ -32,4 +32,9 @@ public class SkeletalMuscle implements NerveTarget, Constrictive {
     public void removeFromInputNerves(Nerve nerve) {
         nerveInputs.remove(nerve);
     }
+
+	@Override
+	public Nerve[] getInputNerves() {
+		return nerveInputs.toArray(new Nerve[nerveInputs.size()]);
+	}
 }
