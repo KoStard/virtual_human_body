@@ -33,7 +33,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="4" language="java" name="org.MedStard.types.NeuralSystem.NerveTarget" 
+  <interface id="4" language="java" name="org.MedStard.types.NeuralSystem.NeuralPathTarget"
     project="simulating_human_organism" 
     file="/simulating_human_organism/src/org/MedStard/types/NeuralSystem/NerveTarget.java" binary="false" 
     corner="BOTTOM_RIGHT">    
@@ -65,7 +65,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="7" language="java" name="org.MedStard.types.NeuralSystem.NerveSource" 
+  <interface id="7" language="java" name="org.MedStard.types.NeuralSystem.NeuralPathSource"
     project="simulating_human_organism" 
     file="/simulating_human_organism/src/org/MedStard/types/NeuralSystem/NerveSource.java" binary="false" 
     corner="BOTTOM_RIGHT">    

@@ -4,54 +4,67 @@ import org.MedStard.types.AbstractTypes.Excitable;
 
 import java.util.Vector;
 
-public class Nucleus implements Excitable, NerveSource, NerveTarget {
-    private Vector<Nerve> inputNerves;
-    private Vector<Nerve> outputNerves;
+public class Nucleus implements Excitable, NeuralPathSource, NeuralPathTarget {
+    private Vector<NeuralPath> neuralInputs;
+    private Vector<NeuralPath> neuralOutputs;
+    private String name;
 
-    public Nucleus(Vector<Nerve> inputNerves, Vector<Nerve> outputNerves) {
-        this.inputNerves = new Vector<>(inputNerves);
-        this.outputNerves = new Vector<>(outputNerves);
+    public Nucleus(String name, Vector<NeuralPath> neuralInputs, Vector<NeuralPath> neuralOutputs) {
+        this.neuralInputs = new Vector<>(neuralInputs);
+        this.neuralOutputs = new Vector<>(neuralOutputs);
+        setName(name);
     }
 
-    public Nucleus() {
-        outputNerves = new Vector<>();
-        inputNerves = new Vector<>();
+    public Nucleus(String name) {
+        neuralOutputs = new Vector<>();
+        neuralInputs = new Vector<>();
+        setName(name);
     }
 
     @Override
     public void stimulate() {
-        for (int i = 0; i < outputNerves.size(); i++) {
-            outputNerves.elementAt(i).stimulate();
+        for (int i = 0; i < neuralOutputs.size(); i++) {
+            neuralOutputs.elementAt(i).stimulate();
         }
     }
 
     @Override
-    public void addToOutputNerves(Nerve nerve) {
-        outputNerves.add(nerve);
+    public void addToNeuralOutputs(NeuralPath nerve) {
+        neuralOutputs.add(nerve);
     }
 
     @Override
-    public void removeFromOutputNerves(Nerve nerve) {
-        outputNerves.remove(nerve);
+    public void removeFromNeuralOutputs(NeuralPath nerve) {
+        neuralOutputs.remove(nerve);
     }
 
     @Override
-    public Nerve[] getOutputNerves() {
-        return outputNerves.toArray(new Nerve[outputNerves.size()]);
+    public NeuralPath[] getNeuralOutputs() {
+        return neuralOutputs.toArray(new NeuralPath[neuralOutputs.size()]);
     }
 
     @Override
-    public void addToInputNerves(Nerve nerve) {
-        inputNerves.add(nerve);
+    public void addToNeuralInputs(NeuralPath nerve) {
+        neuralInputs.add(nerve);
     }
 
     @Override
-    public void removeFromInputNerves(Nerve nerve) {
-        inputNerves.remove(nerve);
+    public void removeFromNeuralInputs(NeuralPath nerve) {
+        neuralInputs.remove(nerve);
     }
 
 	@Override
-	public Nerve[] getInputNerves() {
-		return inputNerves.toArray(new Nerve[inputNerves.size()]);
+	public NeuralPath[] getNeuralInputs() {
+		return neuralInputs.toArray(new NeuralPath[neuralInputs.size()]);
 	}
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
+    }
 }

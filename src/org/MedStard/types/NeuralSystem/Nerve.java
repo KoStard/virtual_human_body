@@ -1,40 +1,41 @@
 package org.MedStard.types.NeuralSystem;
 
+import org.MedStard.types.AbstractTypes.Excitable;
+import org.MedStard.types.AbstractTypes.Named;
+
 import java.util.Vector;
 
-import org.MedStard.types.AbstractTypes.Excitable;
+public class Nerve implements Excitable, Named {
+    private Vector<NeuralPath> neuralPaths;
+    private String name;
 
-public class Nerve implements Excitable {
-    private Vector<NerveSource> sources;
-    private Vector<NerveTarget> targets;
-
-    public Nerve() {
-    	sources = new Vector<NerveSource>();
-    	targets = new Vector<NerveTarget>();
+    public Nerve(String name) {
+        neuralPaths = new Vector<NeuralPath>();
+        setName(name);
     }
 
-    public Vector<NerveSource> getSource() {
-        return sources;
+    public void addNeuralPath(NeuralPath newNeuralPath) {
+        neuralPaths.add(newNeuralPath);
     }
 
-    public void addSource(NerveSource newSource) {
-    	sources.add(newSource);
-    	newSource.addToOutputNerves(this);
-    }
-
-    public Vector<NerveTarget> getTarget() {
-        return targets;
-    }
-
-    public void addTarget(NerveTarget newTarget) {
-        targets.add(newTarget);
-        newTarget.addToInputNerves(this);
+    public void removeNeuralPath(NeuralPath newNeuralPath) {
+        neuralPaths.remove(newNeuralPath);
     }
 
     @Override
     public void stimulate() {
-    	for (NerveTarget t : targets) {
-    		t.stimulate();
-    	}
+        for (NeuralPath n : neuralPaths) {
+            n.stimulate();
+        }
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
     }
 }
