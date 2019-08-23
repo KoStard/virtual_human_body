@@ -38,6 +38,7 @@ public class NeuralPath implements Excitable, Named {
 
     @Override
     public void stimulate() {
+    	System.out.println("Stimulating NeuralPath");
         this.target.stimulate();
     }
 
