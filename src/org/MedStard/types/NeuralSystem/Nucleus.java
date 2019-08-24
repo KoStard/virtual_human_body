@@ -28,7 +28,7 @@ public class Nucleus implements Excitable, Named, Group<NucleusElement>, Nucleus
 
 	@Override
 	public void stimulate() {
-		System.out.println("Stimulating Nucleus");
+        System.out.println(String.format("The nucleus %s is stimulating.", getName()));
 		for (NucleusElement element : elements) {
 			element.stimulate();
 		}

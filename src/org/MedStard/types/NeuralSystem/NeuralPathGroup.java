@@ -28,6 +28,7 @@ public class NeuralPathGroup implements Excitable, Named, Group<NeuralPathElemen
 
 	@Override
 	public void stimulate() {
+        System.out.println(String.format("The neural path group %s is stimulating.", getName()));
 		for (NeuralPathElement n : elements) {
 			n.stimulate();
 		}

@@ -59,7 +59,7 @@ public class SubNucleus implements Excitable, NeuralPathSource, NeuralPathTarget
 
     @Override
     public void stimulate() {
-    	System.out.println("Stimulating SubNucleus");
+        System.out.println(String.format("The subnucleus %s is stimulating.", getName()));
         for (int i = 0; i < neuralOutputs.size(); i++) {
             neuralOutputs.elementAt(i).stimulate();
         }

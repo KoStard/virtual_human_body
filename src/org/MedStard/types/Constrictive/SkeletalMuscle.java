@@ -18,12 +18,13 @@ public class SkeletalMuscle implements NeuralPathTarget, Constrictive {
 
     @Override
     public void stimulate() {
+        System.out.println(String.format("The muscle %s is stimulating.", getName()));
         constrict();
     }
 
     @Override
     public void constrict() {
-        System.out.println(String.format("The muscle %s is constricting", getName()));
+        System.out.println(String.format("The muscle %s is constricting.", getName()));
     }
 
     @Override

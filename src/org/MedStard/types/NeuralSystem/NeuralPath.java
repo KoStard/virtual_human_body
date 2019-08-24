@@ -43,7 +43,7 @@ public class NeuralPath implements Excitable, Named, NeuralPathElement {
 
     @Override
     public void stimulate() {
-    	System.out.println("Stimulating NeuralPath");
+        System.out.println(String.format("The neural path %s is stimulating.", getName()));
         this.target.stimulate();
     }
 
