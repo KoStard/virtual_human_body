@@ -1,42 +1,87 @@
 package org.MedStard.types.NeuralSystem;
 
-import org.MedStard.types.AbstractTypes.Excitable;
-import org.MedStard.types.AbstractTypes.Named;
-
+import java.util.LinkedList;
 import java.util.Vector;
 
-public class Nucleus implements Excitable, Named {
-    private String name;
-    private Vector<SubNucleus> subNuclei;
+import org.MedStard.types.AbstractTypes.Excitable;
+import org.MedStard.types.AbstractTypes.Group;
+import org.MedStard.types.AbstractTypes.Named;
 
-    public Nucleus(String name) {
-    	subNuclei = new Vector<>();
-        setName(name);
-    }
+/**
+ * 
+ * Nucleus - can contain
+ * 
+ * @author rubenkostandyan
+ *
+ */
 
-    @Override
-    public void stimulate() {
-    	System.out.println("Stimulating Nucleus");
-        for (SubNucleus subNucleus : subNuclei) {
-        	subNucleus.stimulate();
-        }
-    }
+public class Nucleus implements Excitable, Named, Group<NucleusElement>, NucleusElement {
+	private String name;
+	private Vector<NucleusElement> elements;
+	private LinkedList<Nucleus> owners;
 
-    @Override
-    public String getName() {
-        return name;
-    }
+	public Nucleus(String name) {
+		elements = new Vector<>();
+		owners = new LinkedList<>();
+		setName(name);
+	}
 
-    @Override
-    public void setName(String name) {
-        this.name = name;
-    }
-    
-    public void addSubNucleus(SubNucleus subNucleus) {
-        subNuclei.add(subNucleus);
-    }
+	@Override
+	public void stimulate() {
+		System.out.println("Stimulating Nucleus");
+		for (NucleusElement element : elements) {
+			element.stimulate();
+		}
+	}
 
-    public void removeSubNucleus(SubNucleus subNucleus) {
-        subNuclei.remove(subNucleus);
-    }
+	@Override
+	public String getName() {
+		return name;
+	}
+
+	@Override
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public void appendOwner(Nucleus g) {
+		owners.add(g);
+	}
+
+	@Override
+	public void removeOwner(Nucleus g) {
+		owners.remove(g);
+	}
+
+	@Override
+	public LinkedList<Nucleus> getOwners() {
+		return owners;
+	}
+
+	@Override
+	public Boolean hasOwner() {
+		return owners.isEmpty();
+	}
+
+	@Override
+	public Vector<NucleusElement> getElements() {
+		return elements;
+	}
+
+	@Override
+	public void addElement(NucleusElement e) {
+		elements.add(e);
+	}
+
+	@Override
+	public void removeElement(NucleusElement e) {
+		elements.remove(e);
+	}
+
+	@Override
+	public void bindElement(NucleusElement e) {
+		addElement(e);
+		e.appendOwner(this);
+	}
 }

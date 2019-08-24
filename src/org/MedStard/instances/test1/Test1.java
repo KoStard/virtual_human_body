@@ -1,7 +1,7 @@
 package org.MedStard.instances.test1;
 
 import org.MedStard.types.Constrictive.SkeletalMuscle;
-import org.MedStard.types.NeuralSystem.Nerve;
+import org.MedStard.types.NeuralSystem.NeuralPathGroup;
 import org.MedStard.types.NeuralSystem.NeuralPath;
 import org.MedStard.types.NeuralSystem.Nucleus;
 import org.MedStard.types.NeuralSystem.SubNucleus;
@@ -12,12 +12,12 @@ public class Test1 {
     public Test1() {
         Nucleus nucl = new Nucleus("Nucleus One");
         SubNucleus subNucleus = new SubNucleus("SubNucleus one"); 
-        nucl.addSubNucleus(subNucleus);
+        nucl.addElement(subNucleus);
         
         SkeletalMuscle muscle = new SkeletalMuscle("Muscle One");
-        Nerve nerve = new Nerve("Test Nerve");
+        NeuralPathGroup nerve = new NeuralPathGroup("Test Nerve");
 
-        nerve.addNeuralPath(new NeuralPath(
+        nerve.addElement(new NeuralPath(
                 "NeuralPath",
                 subNucleus,
                 muscle
