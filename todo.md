@@ -1,1 +1,8 @@
 - Register owners in the NeuralPaths +
+- Dorsal column–medial lemniscus pathway - https://en.wikipedia.org/wiki/Dorsal_column–medial_lemniscus_pathway
+- Add divisions when some neural path is leaving the group - can be used for selective stimulation 
+- Add receptors!
+- Maybe - add length, neuron types, speed and timings
+- Add multiple names for elements - tract of Burdach...
+- Add timeline - bind tasks to the timeline point and run them in that order - simulating parallel processes
+- Maybe - add fillInto method -> add all elements to the target group

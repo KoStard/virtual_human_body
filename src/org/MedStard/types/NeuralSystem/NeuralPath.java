@@ -17,8 +17,12 @@ public class NeuralPath implements Excitable, Named, NeuralPathElement {
     }
 
     public NeuralPath(String name, NeuralPathSource source, NeuralPathTarget target) {
-        setSource(source);
-        setTarget(target);
+    	if (source != null) {
+    		setSource(source);
+    	}
+    	if (target != null) {
+    		setTarget(target);
+    	}
         setName(name);
         owners = new LinkedList<>();
     }
