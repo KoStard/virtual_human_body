@@ -7,7 +7,7 @@ import org.MedStard.types.NeuralSystem.NeuralPathTarget;
 
 import java.util.Vector;
 
-public class SkeletalMuscle implements NeuralPathTarget, Constrictive {
+public abstract class SkeletalMuscle implements NeuralPathTarget, Constrictive {
     private Vector<NeuralPath> neuralInputs;
     private String name;
 

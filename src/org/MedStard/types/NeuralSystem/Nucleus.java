@@ -15,7 +15,7 @@ import org.MedStard.types.AbstractTypes.Named;
  *
  */
 
-public class Nucleus implements Excitable, Named, Group<NucleusElement>, NucleusElement {
+public abstract class Nucleus implements Excitable, Named, Group<NucleusElement>, NucleusElement {
 	private String name;
 	private Vector<NucleusElement> elements;
 	private LinkedList<Nucleus> owners;

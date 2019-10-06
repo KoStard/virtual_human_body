@@ -15,7 +15,7 @@ import org.MedStard.types.AbstractTypes.Named;
  *
  */
 
-public class NeuralPathGroup implements Excitable, Named, Group<NeuralPathElement>, NeuralPathElement {
+public abstract class NeuralPathGroup implements Excitable, Named, Group<NeuralPathElement>, NeuralPathElement {
 	private Vector<NeuralPathElement> elements;
 	private String name;
 	private LinkedList<NeuralPathGroup> owners;
