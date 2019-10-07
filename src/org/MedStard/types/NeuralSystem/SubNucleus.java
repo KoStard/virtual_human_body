@@ -13,7 +13,7 @@ import org.MedStard.types.AbstractTypes.Excitable;
  *
  */
 
-public class SubNucleus implements Excitable, NeuralPathSource, NeuralPathTarget, NucleusElement {
+public abstract class SubNucleus implements Excitable, NeuralPathSource, NeuralPathTarget, NucleusElement {
     private Vector<NeuralPath> neuralInputs;
     private Vector<NeuralPath> neuralOutputs;
     private LinkedList<Nucleus> owners;

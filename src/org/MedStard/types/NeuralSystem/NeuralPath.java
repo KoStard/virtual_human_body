@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import org.MedStard.types.AbstractTypes.Excitable;
 import org.MedStard.types.AbstractTypes.Named;
 
-public class NeuralPath implements Excitable, Named, NeuralPathElement {
+public abstract class NeuralPath implements Excitable, Named, NeuralPathElement {
     private NeuralPathSource source;
     private NeuralPathTarget target;
     private String name;
