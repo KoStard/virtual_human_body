@@ -12,10 +12,9 @@ public class Test1 {
     public Test1() {
         /**
          * Fasciculus Gracilis and Fasciculus Cuneatus
-         * - conscious proprioception
-         * - deep touch
+         * - discriminative touch
          * - vibration
-         * - visceral pain
+         * - joint position
          * 
          * Fasciculus Cuneatus - from upper part of the body
          * Fasciculus Gracilis - from lower limbs and trunk
@@ -34,6 +33,33 @@ public class Test1 {
         SubNucleus rightSubNucleusCuneatus = new SubNucleus("Right Nucleus Cuneatus");
         SubNucleus leftSubNucleusGracilis = new SubNucleus("Left Nucleus Gracilis");
         SubNucleus rightSubNucleusGracilis = new SubNucleus("Right Nucleus Gracilis");
+        
+        /**
+         * Anterolateral system
+         * - spinothalamic tract
+         * - spinoreticular tract
+         * - spinomesencephalic tract
+         * 
+         * second neuron - dorsal horn of same segment
+         */
+
+        NeuralPathGroup leftAnteroLateralSystem = new NeuralPathGroup("Left anterolateral system");
+        NeuralPathGroup rightAnteroLateralSystem = new NeuralPathGroup("Right anterolateral system");
+
+        NeuralPathGroup leftSpinoThalamicTract = new NeuralPathGroup("Left spinothalamic tract");
+        NeuralPathGroup leftSpinoReticularTract = new NeuralPathGroup("Left spinoreticular tract");
+        NeuralPathGroup leftSpinoMesencephalicTract = new NeuralPathGroup("Left spinomesencephalic tract");
+        leftAnteroLateralSystem.addElement(leftSpinoThalamicTract);
+        leftAnteroLateralSystem.addElement(leftSpinoReticularTract);
+        leftAnteroLateralSystem.addElement(leftSpinoMesencephalicTract);
+
+        NeuralPathGroup rightSpinoThalamicTract = new NeuralPathGroup("Right spinothalamic tract");
+        NeuralPathGroup rightSpinoReticularTract = new NeuralPathGroup("Right spinoreticular tract");
+        NeuralPathGroup rightSpinoMesencephalicTract = new NeuralPathGroup("Right spinomesencephalic tract");
+        rightAnteroLateralSystem.addElement(rightSpinoThalamicTract);
+        rightAnteroLateralSystem.addElement(rightSpinoReticularTract);
+        rightAnteroLateralSystem.addElement(rightSpinoMesencephalicTract);
+        
 
         /**
          * Adding spinal nerves, dorsal/ventral roots and neural paths of fasciculi
@@ -59,18 +85,18 @@ public class Test1 {
         for (int spinalNerveIndex = 1; spinalNerveIndex <= 31; spinalNerveIndex++) {
             String nerveName;
 
-            if (spinalNerveIndex <= 8) {  // Cervical
+            if (spinalNerveIndex <= 8) { // Cervical
                 nerveName = String.format("C%d", spinalNerveIndex);
-            } else if (spinalNerveIndex <= 20) {  // Thoracic
+            } else if (spinalNerveIndex <= 20) { // Thoracic
                 nerveName = String.format("Th%d", spinalNerveIndex - 8);
-            } else if (spinalNerveIndex <= 25) {  // Lumbar
+            } else if (spinalNerveIndex <= 25) { // Lumbar
                 nerveName = String.format("L%d", spinalNerveIndex - 20);
-            } else if (spinalNerveIndex <= 30) {  // Sacral
+            } else if (spinalNerveIndex <= 30) { // Sacral
                 nerveName = String.format("S%d", spinalNerveIndex - 25);
-            } else {  // Coccygeal
+            } else { // Coccygeal
                 nerveName = String.format("Co%d", spinalNerveIndex - 30);
             }
-            
+
             // Sensory
             leftDorsalRoots.add(new NeuralPathGroup(String.format("Dorsal root of left %s spinal nerve", nerveName)));
             rightDorsalRoots.add(new NeuralPathGroup(String.format("Dorsal root of right %s spinal nerve", nerveName)));
@@ -82,11 +108,16 @@ public class Test1 {
 
             leftSpinalNerves.add(new NeuralPathGroup(String.format("Left %s spinal nerve", nerveName)));
             rightSpinalNerves.add(new NeuralPathGroup(String.format("Right %s spinal nerve", nerveName)));
-
-            NeuralPath leftFascicularPath = new NeuralPath(String.format("Left %s spinal nerve fascicular path", nerveName));
-            NeuralPath rightFascicularPath = new NeuralPath(String.format("Right %s spinal nerve fascicular path", nerveName));
             
-            if (spinalNerveIndex <= 14) {  // 8 cervical + 6 thoracic
+            
+            //=========================================================================
+            // Adding fasciculus gracilis / cuneatus
+            NeuralPath leftFascicularPath = new NeuralPath(
+                    String.format("Left %s spinal nerve fascicular path", nerveName));
+            NeuralPath rightFascicularPath = new NeuralPath(
+                    String.format("Right %s spinal nerve fascicular path", nerveName));
+
+            if (spinalNerveIndex <= 14) { // 8 cervical + 6 thoracic
                 leftFasciculusCuneatus.addElement(leftFascicularPath);
                 rightFasciculusCuneatus.addElement(rightFascicularPath);
 
@@ -94,17 +125,17 @@ public class Test1 {
                 rightFascicularPath.setTarget(rightSubNucleusCuneatus);
             } else {
                 leftFasciculusGracilis.addElement(leftFascicularPath);
-                rightFasciculusGracilis.addElement(rightFascicularPath);;
+                rightFasciculusGracilis.addElement(rightFascicularPath);
 
                 leftFascicularPath.setTarget(leftSubNucleusGracilis);
                 rightFascicularPath.setTarget(rightSubNucleusGracilis);
             }
-            
-            leftDorsalRoots.get(spinalNerveIndex-1).addElement(leftFascicularPath);
-            leftSpinalNerves.get(spinalNerveIndex-1).addElement(leftFascicularPath);
-            
-            rightDorsalRoots.get(spinalNerveIndex-1).addElement(rightFascicularPath);
-            rightSpinalNerves.get(spinalNerveIndex-1).addElement(rightFascicularPath);
+
+            leftDorsalRoots.get(spinalNerveIndex - 1).addElement(leftFascicularPath);
+            leftSpinalNerves.get(spinalNerveIndex - 1).addElement(leftFascicularPath);
+
+            rightDorsalRoots.get(spinalNerveIndex - 1).addElement(rightFascicularPath);
+            rightSpinalNerves.get(spinalNerveIndex - 1).addElement(rightFascicularPath);
         }
 
         leftFasciculusCuneatus.stimulate();
