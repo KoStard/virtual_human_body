@@ -18,8 +18,8 @@ public class SpinalSegment {
     }
 
     void initializeSpinalNerves(Brain brain) {
-        leftHalf.spinalNerve.addElement(leftHalf.whiteMatter.posteriorColumn.getElements().get(0));
-        rightHalf.spinalNerve.addElement(rightHalf.whiteMatter.posteriorColumn.getElements().get(0));
+        leftHalf.spinalNerve.addElement(leftHalf.whiteMatter.posteriorFuniculus.getElements().get(0));
+        rightHalf.spinalNerve.addElement(rightHalf.whiteMatter.posteriorFuniculus.getElements().get(0));
     }
 
     public SpinalNerve getSpinalNerve(Sides side) {

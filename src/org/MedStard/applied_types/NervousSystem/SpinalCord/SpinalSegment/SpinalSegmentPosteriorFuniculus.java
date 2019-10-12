@@ -5,9 +5,9 @@ import org.MedStard.constants.NervousSystemConstants;
 import org.MedStard.enums.Sides;
 import org.MedStard.types.NeuralSystem.NeuralPathGroup;
 
-public class SpinalSegmentPosteriorColumn extends NeuralPathGroup {
-    public SpinalSegmentPosteriorColumn(int index, Sides side, Brain brain) {
-        super(String.format("spinal segment N%d %s white matter posterior column", index, side.label));
+public class SpinalSegmentPosteriorFuniculus extends NeuralPathGroup {
+    public SpinalSegmentPosteriorFuniculus(int index, Sides side, Brain brain) {
+        super(String.format("spinal segment N%d %s white matter posterior funiculus", index, side.label));
         // First element is the one that will be added to the spinal nerve
         if (index <= NervousSystemConstants.FasciculusCuneatusSegmentsCount) { // All fibers of fasciculus gracilis and part of fasciculus cuneatus
             if (side == Sides.Left) {
