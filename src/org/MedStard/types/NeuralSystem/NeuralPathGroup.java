@@ -76,7 +76,7 @@ public abstract class NeuralPathGroup implements Excitable, Named, Group<NeuralP
 
 	@Override
 	public Vector<NeuralPathElement> getElements() {
-		return null;
+		return elements;
 	}
 
 	@Override
