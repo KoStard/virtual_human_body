@@ -3,4 +3,19 @@ Funiculi:
     - fasciculus cuneatus + gracilis (based on level)
         - not crossed below nucleus - https://upload.wikimedia.org/wikipedia/commons/6/66/Gray759.png
 - lateral
+    Sensory
+    - anterior/posterior spinocerebellar tract
+    - spino-olivary tract
+    - spinotectal tract
+    - lateral spinothalamic tract
+    Motor
+    - lateral corticospinal tract
+    - rubrospinal tract
 - posterior
+    Sensory
+    - anterior spinothalamic tract
+    Motor
+    - anterior corticospinal tract
+    - tectospinal tract
+    - vestibulospinal tract
+    - reticulospinal tract
