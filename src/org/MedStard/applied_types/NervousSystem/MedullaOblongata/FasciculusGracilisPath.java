@@ -1,4 +1,4 @@
-package org.MedStard.applied_types.NervousSystem;
+package org.MedStard.applied_types.NervousSystem.MedullaOblongata;
 
 import org.MedStard.enums.Sides;
 import org.MedStard.types.NeuralSystem.NeuralPath;

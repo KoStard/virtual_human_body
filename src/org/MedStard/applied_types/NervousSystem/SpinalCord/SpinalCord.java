@@ -1,5 +1,7 @@
-package org.MedStard.applied_types.NervousSystem;
+package org.MedStard.applied_types.NervousSystem.SpinalCord;
 
+import org.MedStard.applied_types.NervousSystem.Brain;
+import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment.SpinalSegment;
 import org.MedStard.constants.NervousSystemConstants;
 
 /**
