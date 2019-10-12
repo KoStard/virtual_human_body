@@ -1,4 +1,4 @@
-package org.MedStard.applied_types.NeuralSystem;
+package org.MedStard.applied_types.NervousSystem;
 
 /**
  * Containing 31 segments

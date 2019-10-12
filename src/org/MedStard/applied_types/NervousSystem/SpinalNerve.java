@@ -1,4 +1,4 @@
-package org.MedStard.applied_types.NeuralSystem;
+package org.MedStard.applied_types.NervousSystem;
 
 import org.MedStard.enums.Sides;
 import org.MedStard.types.NeuralSystem.NeuralPathGroup;

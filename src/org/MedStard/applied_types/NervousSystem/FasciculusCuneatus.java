@@ -1,11 +1,11 @@
-package org.MedStard.applied_types.NeuralSystem;
+package org.MedStard.applied_types.NervousSystem;
 
 import org.MedStard.enums.Sides;
 import org.MedStard.types.NeuralSystem.NeuralPathGroup;
 
-public class FasciculusGracilis extends NeuralPathGroup {
+public class FasciculusCuneatus extends NeuralPathGroup {
     public Sides side;
-    public FasciculusGracilis(Sides side) {
+    public FasciculusCuneatus(Sides side) {
         super(String.format("%s fasciculus cuneatus", side.label));
         this.side = side;
     }

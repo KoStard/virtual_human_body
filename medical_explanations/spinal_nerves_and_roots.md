@@ -17,7 +17,20 @@ Ventral roots
 
 - Fasciculus Cuneatus - from upper part of the body - from vertebral level T6 and above - upper 14 segments
 - Fasciculus Gracilis - from lower limbs and trunk - from vertebral level T7 and below - lower 17 segments
- 
+
+Fasciculus Gracilis and Fasciculus Cuneatus
+- discriminative touch
+- vibration
+- joint position
+
+
+Anterolateral system
+- spinothalamic tract
+- spinoreticular tract
+- spinomesencephalic tract
+
+second neuron - dorsal horn of same segment
+
 
 Neural pathway
 
@@ -77,3 +90,10 @@ Other
 
 
 https://en.wikipedia.org/wiki/Template:Neural_tracts
+
+
+Has to contain multiple variants of same system - with possiblities
+
+
+Diseases:
+- will apply disease on normal organism

@@ -6,3 +6,4 @@
 - Add multiple names for elements - tract of Burdach...
 - Add timeline - bind tasks to the timeline point and run them in that order - simulating parallel processes
 - Maybe - add fillInto method -> add all elements to the target group
+- Multiple sources and targets for neural pathways - stimulation of any source will trigger every target
