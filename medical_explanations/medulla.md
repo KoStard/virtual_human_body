@@ -1,0 +1,1 @@
+Nucleus Cuneatus/Gracilis - second order fibers decussate as internal arcuate fibers - medial lemniscus - thalamus

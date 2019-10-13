@@ -1,10 +1,15 @@
 Funiculi:
 - anterior 
-    - fasciculus cuneatus + gracilis (based on level)
+    - fasciculus cuneatus + gracilis (based on level) - proprioceptive
         - not crossed below nucleus - https://upload.wikimedia.org/wikipedia/commons/6/66/Gray759.png
+        - conscious
 - lateral
     - Sensory
-        - anterior/posterior spinocerebellar tract
+        - spinocerebellar tract
+            - ventral/dorsal 
+            - ipsilateral
+            - proprioceptive - from Golgi tendon organs and muscle spindles
+            - dorsal - Flechsig's
         - spino-olivary tract
         - spinotectal tract
         - lateral spinothalamic tract
@@ -19,3 +24,7 @@ Funiculi:
         - tectospinal tract
         - vestibulospinal tract
         - reticulospinal tract
+
+
+Some unconscious proprioception pathways arise from spinal interneurons, that participate in reflexes.
+https://www.dartmouth.edu/~rswenson/NeuroSci/chapter_7A.html#Dorsal_spinocerebellar
