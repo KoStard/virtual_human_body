@@ -1,4 +1,4 @@
-package org.MedStard.applied_types.NervousSystem.MedullaOblongata;
+package org.MedStard.applied_types.NervousSystem.MedullaOblongata.Gracilis;
 
 import org.MedStard.enums.Sides;
 import org.MedStard.types.NeuralSystem.NeuralPath;

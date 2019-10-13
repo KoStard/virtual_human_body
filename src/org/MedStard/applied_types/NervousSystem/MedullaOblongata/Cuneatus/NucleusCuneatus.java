@@ -1,4 +1,4 @@
-package org.MedStard.applied_types.NervousSystem.MedullaOblongata;
+package org.MedStard.applied_types.NervousSystem.MedullaOblongata.Cuneatus;
 
 import org.MedStard.constants.NervousSystemConstants;
 import org.MedStard.enums.Sides;

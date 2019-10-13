@@ -1,5 +1,7 @@
 package org.MedStard.applied_types.NervousSystem.MedullaOblongata;
 
+import org.MedStard.applied_types.NervousSystem.MedullaOblongata.Cuneatus.NucleusCuneatus;
+import org.MedStard.applied_types.NervousSystem.MedullaOblongata.Gracilis.NucleusGracilis;
 import org.MedStard.enums.Sides;
 
 public class MedullaOblongataHalf {
