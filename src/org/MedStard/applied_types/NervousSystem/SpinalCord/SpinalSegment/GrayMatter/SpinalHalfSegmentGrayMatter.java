@@ -1,4 +1,4 @@
-package org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment;
+package org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment.GrayMatter;
 
 import org.MedStard.enums.Sides;
 import org.MedStard.types.NeuralSystem.Nucleus;
@@ -8,7 +8,10 @@ import org.MedStard.types.NeuralSystem.Nucleus;
  * Don't adding subnuclei yet
  */
 public class SpinalHalfSegmentGrayMatter extends Nucleus {
+    public ClarkesNucleus clarkesNucleus;
     public SpinalHalfSegmentGrayMatter(int index, Sides side) {
         super(String.format("spinal segment N%d %s half gray matter", index, side.label));
+        clarkesNucleus = new ClarkesNucleus(side, index);
+        addElement(clarkesNucleus);
     }
 }

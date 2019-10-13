@@ -6,7 +6,7 @@ import org.MedStard.enums.Sides;
 public class Test1 {
     public Test1() {
         Organism organism = new Organism();
-        organism.nervousSystem.spinalCord.segments[6].getSpinalNerve(Sides.Left).stimulate();
+        organism.nervousSystem.spinalCord.segments[29].getSpinalNerve(Sides.Left).stimulate();
     }
 
     public static void main(String[] args) {
