@@ -5,7 +5,6 @@ import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalCord;
 import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalNerve;
 import org.MedStard.constants.NervousSystemConstants;
 import org.MedStard.enums.Sides;
-import org.MedStard.types.NeuralSystem.NeuralPath;
 
 public class SpinalSegment {
     public int index;
@@ -45,4 +44,3 @@ public class SpinalSegment {
         }
     }
 }
-˝
