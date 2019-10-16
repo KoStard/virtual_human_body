@@ -5,6 +5,7 @@ import java.util.Vector;
 
 import org.MedStard.types.AbstractTypes.Excitable;
 import org.MedStard.types.AbstractTypes.Group;
+import org.MedStard.types.AbstractTypes.Initializable;
 import org.MedStard.types.AbstractTypes.Named;
 
 /**
@@ -15,7 +16,7 @@ import org.MedStard.types.AbstractTypes.Named;
  *
  */
 
-public abstract class NeuralPathGroup implements Excitable, Named, Group<NeuralPathElement>, NeuralPathElement {
+public abstract class NeuralPathGroup implements Excitable, Named, Group<NeuralPathElement>, NeuralPathElement, Initializable {
 	private Vector<NeuralPathElement> elements;
 	private String name;
 	private LinkedList<NeuralPathGroup> owners;
@@ -24,6 +25,13 @@ public abstract class NeuralPathGroup implements Excitable, Named, Group<NeuralP
 		elements = new Vector<>();
 		owners = new LinkedList<>();
 		setName(name);
+	}
+
+	@Override
+	public void initialize() {
+		for (NeuralPathElement e : elements) {
+			e.initialize();
+		}
 	}
 
 	@Override

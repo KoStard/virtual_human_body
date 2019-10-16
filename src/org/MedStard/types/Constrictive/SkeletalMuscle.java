@@ -1,13 +1,14 @@
 package org.MedStard.types.Constrictive;
 
 import org.MedStard.types.AbstractTypes.Constrictive;
+import org.MedStard.types.AbstractTypes.Initializable;
 import org.MedStard.types.AbstractTypes.Named;
 import org.MedStard.types.NeuralSystem.NeuralPath;
 import org.MedStard.types.NeuralSystem.NeuralPathTarget;
 
 import java.util.Vector;
 
-public abstract class SkeletalMuscle implements NeuralPathTarget, Constrictive {
+public abstract class SkeletalMuscle implements NeuralPathTarget, Constrictive, Initializable {
     private Vector<NeuralPath> neuralInputs;
     private String name;
 

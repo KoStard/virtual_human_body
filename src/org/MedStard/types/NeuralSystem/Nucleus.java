@@ -5,6 +5,7 @@ import java.util.Vector;
 
 import org.MedStard.types.AbstractTypes.Excitable;
 import org.MedStard.types.AbstractTypes.Group;
+import org.MedStard.types.AbstractTypes.Initializable;
 import org.MedStard.types.AbstractTypes.Named;
 
 /**
@@ -15,7 +16,7 @@ import org.MedStard.types.AbstractTypes.Named;
  *
  */
 
-public abstract class Nucleus implements Excitable, Named, Group<NucleusElement>, NucleusElement {
+public abstract class Nucleus implements Excitable, Named, Group<NucleusElement>, NucleusElement, Initializable {
 	private String name;
 	private Vector<NucleusElement> elements;
 	private LinkedList<Nucleus> owners;
@@ -24,6 +25,13 @@ public abstract class Nucleus implements Excitable, Named, Group<NucleusElement>
 		elements = new Vector<>();
 		owners = new LinkedList<>();
 		setName(name);
+	}
+
+	@Override
+	public void initialize() {
+		for (NucleusElement e : elements) {
+			e.initialize();
+		}
 	}
 
 	@Override

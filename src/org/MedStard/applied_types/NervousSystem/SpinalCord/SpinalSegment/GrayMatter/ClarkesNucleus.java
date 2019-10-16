@@ -31,7 +31,7 @@ public class ClarkesNucleus extends SubNucleus {
         int lowerEdgeSegmentIndex = NervousSystemConstants.indexFromSegmentLabel("L3");
         if (segmentIndex == lowerEdgeSegmentIndex) { // Adding fibers from lower segments here, because they don't have clarke's nucleus there
             // Sorted by leaving levels - from up to down - so in the last segment there will only be the LAST element
-            for (int i = 0; i < NervousSystemConstants.SpinalSegmentsCount - lowerEdgeSegmentIndex; i++) {
+            for (int i = 0; i < NervousSystemConstants.SpinalSegmentsCount - lowerEdgeSegmentIndex + 1; i++) {
                 MuscleStretchAndTensionNerveFibers muscleStretchAndTensionNerveFibers = new MuscleStretchAndTensionNerveFibers(
                         i + segmentIndex, side);
                 muscleStretchAndTensionNerveFibers.setTarget(this);
@@ -41,5 +41,10 @@ public class ClarkesNucleus extends SubNucleus {
                     segmentIndex, side);
             muscleStretchAndTensionNerveFibers.setTarget(this);
         }
+    }
+
+    @Override
+    public void initialize() {
+
     }
 }

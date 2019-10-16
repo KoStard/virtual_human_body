@@ -15,4 +15,9 @@ public class NucleusCuneatusSubnucleus extends SubNucleus {
         inputFasciculusPath = new FasciculusCuneatusPath(side, index);
         inputFasciculusPath.setTarget(this);
     }
+
+    @Override
+    public void initialize() {
+
+    }
 }

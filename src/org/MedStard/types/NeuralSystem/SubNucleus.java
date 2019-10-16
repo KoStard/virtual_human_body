@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.Vector;
 
 import org.MedStard.types.AbstractTypes.Excitable;
+import org.MedStard.types.AbstractTypes.Initializable;
 
 /**
  * 
@@ -13,7 +14,7 @@ import org.MedStard.types.AbstractTypes.Excitable;
  *
  */
 
-public abstract class SubNucleus implements Excitable, NeuralPathSource, NeuralPathTarget, NucleusElement {
+public abstract class SubNucleus implements Excitable, NeuralPathSource, NeuralPathTarget, NucleusElement, Initializable {
     private Vector<NeuralPath> neuralInputs;
     private Vector<NeuralPath> neuralOutputs;
     private LinkedList<Nucleus> owners;

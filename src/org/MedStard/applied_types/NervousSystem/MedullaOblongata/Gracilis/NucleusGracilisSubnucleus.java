@@ -15,4 +15,9 @@ public class NucleusGracilisSubnucleus extends SubNucleus {
         inputFasciculusPath = new FasciculusGracilisPath(side, index);
         inputFasciculusPath.setTarget(this);
     }
+
+    @Override
+    public void initialize() {
+
+    }
 }

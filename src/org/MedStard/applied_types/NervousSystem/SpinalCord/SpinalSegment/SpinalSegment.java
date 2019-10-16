@@ -5,19 +5,21 @@ import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalCord;
 import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalNerve;
 import org.MedStard.constants.NervousSystemConstants;
 import org.MedStard.enums.Sides;
+import org.MedStard.types.AbstractTypes.Initializable;
 
-public class SpinalSegment {
+public class SpinalSegment implements Initializable {
     public int index;
     public SpinalHalfSegment leftHalf;
     public SpinalHalfSegment rightHalf;
     public SpinalCord spinalCord;
+    public Brain brain;
 
     public SpinalSegment(int index, Brain brain, SpinalCord spinalCord) {
         this.index = index;
         leftHalf = new SpinalHalfSegment(index, Sides.Left, brain, spinalCord);
         rightHalf = new SpinalHalfSegment(index, Sides.Right, brain, spinalCord);
         this.spinalCord = spinalCord;
-        initializeSpinalNerves(brain);
+        this.brain = brain;
     }
 
     void initializeSpinalNerves(Brain brain) {
@@ -29,10 +31,10 @@ public class SpinalSegment {
         if (index > clarkesNucleiLowerLevel) {
             leftHalf.spinalNerve
                     .addElement(spinalCord.segments[clarkesNucleiLowerLevel - 1].leftHalf.grayMatter.clarkesNucleus
-                            .getNeuralInputs()[index - 1 - clarkesNucleiLowerLevel]);
+                            .getNeuralInputs()[index - clarkesNucleiLowerLevel]);
             rightHalf.spinalNerve
                     .addElement(spinalCord.segments[clarkesNucleiLowerLevel - 1].rightHalf.grayMatter.clarkesNucleus
-                            .getNeuralInputs()[index - 1 - clarkesNucleiLowerLevel]);
+                            .getNeuralInputs()[index - clarkesNucleiLowerLevel]);
         }
     }
 
@@ -42,5 +44,12 @@ public class SpinalSegment {
         } else {
             return rightHalf.spinalNerve;
         }
+    }
+
+    @Override
+    public void initialize() {
+        leftHalf.initialize();
+        rightHalf.initialize();
+        initializeSpinalNerves(brain);
     }
 }

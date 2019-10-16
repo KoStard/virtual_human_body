@@ -12,4 +12,9 @@ public class FasciculusCuneatusPath extends NeuralPath {
         this.index = index;
         this.side = side;
     }
+
+    @Override
+    public void initialize() {
+
+    }
 }
