@@ -5,11 +5,15 @@ import org.MedStard.applied_types.NervousSystem.Brain;
 import org.MedStard.applied_types.NervousSystem.MedullaOblongata.Cuneatus.NucleusCuneatusSubnucleus;
 import org.MedStard.applied_types.NervousSystem.MedullaOblongata.Gracilis.NucleusGracilisSubnucleus;
 import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalCord;
+import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment.GrayMatter.ClarkesSubnucleus;
 import org.MedStard.constants.NervousSystemConstants;
 import org.MedStard.enums.Sides;
 import org.MedStard.types.NeuralSystem.NeuralPath;
 import org.MedStard.types.NeuralSystem.NeuralPathElement;
 import org.MedStard.types.NeuralSystem.NeuralPathGroup;
+import org.MedStard.types.NeuralSystem.NucleusElement;
+
+import java.util.Vector;
 
 public class SpinalSegmentPosteriorFuniculus extends NeuralPathGroup {
     int index;
@@ -23,7 +27,7 @@ public class SpinalSegmentPosteriorFuniculus extends NeuralPathGroup {
         this.side = side;
     }
 
-    void addFasciculusGracilisAndCuneatus() {
+    private void addFasciculusGracilisAndCuneatus() {
         // Fasciculus Gracilis and Cuneatus
         // First element is the one that will be added to the spinal nerve
         if (index <= NervousSystemConstants.FasciculusCuneatusSegmentsCount) { // All fibers of fasciculus gracilis and part of fasciculus cuneatus
@@ -61,20 +65,20 @@ public class SpinalSegmentPosteriorFuniculus extends NeuralPathGroup {
         }
     }
 
-    void addMuscleStretchAndTensionNerveFibers() {
+    private void addMuscleStretchAndTensionNerveFibers() {
         // Adding muscle stretch and tension nerve fibers for segments lower than L3 segment - will enter Clarke's nucleus in the L3 segment.
         // Ipsilateral
         int clarkesNucleiLowerLevel = NervousSystemConstants.indexFromSegmentLabel("L3");
-        NeuralPath[] muscleStretchAndTensionNerveFibers;
         if (index >= clarkesNucleiLowerLevel) { // Adding them in the L3 white matter too
+            Vector<NucleusElement> clarkesSubnuclei;
             SpinalSegment lastSegmentWithClarkesNuclei = organism.nervousSystem.spinalCord.segments[clarkesNucleiLowerLevel - 1];
             if (side == Sides.Left) {
-                muscleStretchAndTensionNerveFibers = lastSegmentWithClarkesNuclei.leftHalf.grayMatter.clarkesNucleus.getNeuralInputs();
+                clarkesSubnuclei = lastSegmentWithClarkesNuclei.leftHalf.grayMatter.clarkesNucleus.getElements();
             } else {
-                muscleStretchAndTensionNerveFibers = lastSegmentWithClarkesNuclei.rightHalf.grayMatter.clarkesNucleus.getNeuralInputs();
+                clarkesSubnuclei = lastSegmentWithClarkesNuclei.rightHalf.grayMatter.clarkesNucleus.getElements();
             }
             for (int i = Math.max(index, clarkesNucleiLowerLevel + 1); i <= NervousSystemConstants.SpinalSegmentsCount; i++) {
-                addElement(muscleStretchAndTensionNerveFibers[i - clarkesNucleiLowerLevel]);
+                addElement(((ClarkesSubnucleus) clarkesSubnuclei.get(i - clarkesNucleiLowerLevel)).muscleStretchAndTensionNerveFibers);
             }
         }
     }

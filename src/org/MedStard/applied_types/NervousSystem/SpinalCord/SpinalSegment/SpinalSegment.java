@@ -4,6 +4,7 @@ import org.MedStard.applied_types.Human.Organism;
 import org.MedStard.applied_types.NervousSystem.Brain;
 import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalCord;
 import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalNerve;
+import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment.GrayMatter.ClarkesSubnucleus;
 import org.MedStard.constants.NervousSystemConstants;
 import org.MedStard.enums.Sides;
 import org.MedStard.types.AbstractTypes.Initializable;
@@ -30,19 +31,21 @@ public class SpinalSegment implements Initializable {
         int clarkesNucleiUpperLevel = NervousSystemConstants.clarkesNucleiUpperLevel;
         if (index >= clarkesNucleiUpperLevel) {
             if (index <= clarkesNucleiLowerLevel) {
+                SpinalSegment segment = organism.nervousSystem.spinalCord.segments[index - 1];
                 leftHalf.spinalNerve
-                        .addElement(organism.nervousSystem.spinalCord.segments[index - 1].leftHalf.grayMatter.clarkesNucleus
-                                .getNeuralInputs()[0]);
+                        .addElement(((ClarkesSubnucleus) segment.leftHalf.grayMatter.clarkesNucleus
+                                .getElementByIndex(0)).muscleStretchAndTensionNerveFibers);
                 rightHalf.spinalNerve
-                        .addElement(organism.nervousSystem.spinalCord.segments[index - 1].rightHalf.grayMatter.clarkesNucleus
-                                .getNeuralInputs()[0]);
+                        .addElement(((ClarkesSubnucleus) segment.rightHalf.grayMatter.clarkesNucleus
+                                .getElementByIndex(0)).muscleStretchAndTensionNerveFibers);
             } else {
+                SpinalSegment segment = organism.nervousSystem.spinalCord.segments[clarkesNucleiLowerLevel - 1];
                 leftHalf.spinalNerve
-                        .addElement(organism.nervousSystem.spinalCord.segments[clarkesNucleiLowerLevel - 1].leftHalf.grayMatter.clarkesNucleus
-                                .getNeuralInputs()[index - clarkesNucleiLowerLevel]);
+                        .addElement(((ClarkesSubnucleus) segment.leftHalf.grayMatter.clarkesNucleus
+                                .getElementByIndex(index - clarkesNucleiLowerLevel)).muscleStretchAndTensionNerveFibers);
                 rightHalf.spinalNerve
-                        .addElement(organism.nervousSystem.spinalCord.segments[clarkesNucleiLowerLevel - 1].rightHalf.grayMatter.clarkesNucleus
-                                .getNeuralInputs()[index - clarkesNucleiLowerLevel]);
+                        .addElement(((ClarkesSubnucleus) segment.rightHalf.grayMatter.clarkesNucleus
+                                .getElementByIndex(index - clarkesNucleiLowerLevel)).muscleStretchAndTensionNerveFibers);
             }
         }
     }

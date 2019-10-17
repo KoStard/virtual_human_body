@@ -2,7 +2,11 @@ package org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment.GrayMa
 
 import org.MedStard.constants.NervousSystemConstants;
 import org.MedStard.enums.Sides;
+import org.MedStard.types.NeuralSystem.Nucleus;
+import org.MedStard.types.NeuralSystem.NucleusElement;
 import org.MedStard.types.NeuralSystem.SubNucleus;
+
+import javax.management.InvalidAttributeValueException;
 
 /**
  * Clarke's Nucleus in the posterior horn
@@ -19,7 +23,7 @@ import org.MedStard.types.NeuralSystem.SubNucleus;
  * Source
  * https://www.dartmouth.edu/~rswenson/NeuroSci/chapter_7A.html#Dorsal_spinocerebellar
  */
-public class ClarkesNucleus extends SubNucleus {
+public class ClarkesNucleus extends Nucleus {
     public int segmentIndex;
     public Sides side;
 
@@ -28,23 +32,28 @@ public class ClarkesNucleus extends SubNucleus {
         this.segmentIndex = segmentIndex;
         this.side = side;
         // Add inputs here, outputs will be added later
-        int lowerEdgeSegmentIndex = NervousSystemConstants.indexFromSegmentLabel("L3");
-        if (segmentIndex == lowerEdgeSegmentIndex) { // Adding fibers from lower segments here, because they don't have clarke's nucleus there
+        int lowerEdgeSegmentIndex = NervousSystemConstants.clarkesNucleiLowerLevel;
+        if (segmentIndex == lowerEdgeSegmentIndex) {
+            // Adding fibers from lower segments here, because they don't have clarke's nucleus there
             // Sorted by leaving levels - from up to down - so in the last segment there will only be the LAST element
+            // First one will get fibers from current segment
             for (int i = 0; i < NervousSystemConstants.SpinalSegmentsCount - lowerEdgeSegmentIndex + 1; i++) {
-                MuscleStretchAndTensionNerveFibers muscleStretchAndTensionNerveFibers = new MuscleStretchAndTensionNerveFibers(
-                        i + segmentIndex, side);
-                muscleStretchAndTensionNerveFibers.setTarget(this);
+                ClarkesSubnucleus clarkesSubnucleus = new ClarkesSubnucleus(side, segmentIndex + i, segmentIndex);
+                addElement(clarkesSubnucleus);
             }
         } else {
-            MuscleStretchAndTensionNerveFibers muscleStretchAndTensionNerveFibers = new MuscleStretchAndTensionNerveFibers(
-                    segmentIndex, side);
-            muscleStretchAndTensionNerveFibers.setTarget(this);
+            ClarkesSubnucleus clarkesSubnucleus = new ClarkesSubnucleus(side, segmentIndex, segmentIndex);
+            addElement(clarkesSubnucleus);
         }
     }
 
-    @Override
-    public void initialize() {
-
+    public MuscleStretchAndTensionNerveFibers getWithSegmentIndex(int index) throws InvalidAttributeValueException {
+        for (NucleusElement e : getElements()) {
+            ClarkesSubnucleus s = (ClarkesSubnucleus) e;
+            if (s.targetSegmentIndex == index) {
+                return s.muscleStretchAndTensionNerveFibers;
+            }
+        }
+        throw new InvalidAttributeValueException(String.format("Invalid index %d is given", index));
     }
 }

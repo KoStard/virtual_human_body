@@ -92,4 +92,9 @@ public abstract class Nucleus implements Excitable, Named, Group<NucleusElement>
 		addElement(e);
 		e.appendOwner(this);
 	}
+
+	@Override
+	public NucleusElement getElementByIndex(int i) {
+		return elements.get(i);
+	}
 }

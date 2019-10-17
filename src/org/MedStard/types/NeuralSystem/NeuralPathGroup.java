@@ -92,4 +92,9 @@ public abstract class NeuralPathGroup implements Excitable, Named, Group<NeuralP
 		addElement(e);
 		e.appendOwner(this);
 	}
+
+	@Override
+	public NeuralPathElement getElementByIndex(int i) {
+		return elements.get(i);
+	}
 }
