@@ -42,4 +42,7 @@ public class NervousSystemConstants {
         index += partIndex;
         return index; // 1 based
     }
+
+    public static int clarkesNucleiUpperLevel = indexFromSegmentLabel("C8");
+    public static int clarkesNucleiLowerLevel = indexFromSegmentLabel("L3");
 }

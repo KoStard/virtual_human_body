@@ -21,19 +21,29 @@ public class SpinalSegment implements Initializable {
         this.organism = organism;
     }
 
-    void initializeSpinalNerves() {
+    private void initializeSpinalNerves() {
         leftHalf.spinalNerve.addElement(leftHalf.whiteMatter.posteriorFuniculus.getElements().get(0));
         rightHalf.spinalNerve.addElement(rightHalf.whiteMatter.posteriorFuniculus.getElements().get(0));
 
         // Adding muscleStretchAndTensionNerveFibers for segments that are lower than L3 - for clarke's nuclei
-        int clarkesNucleiLowerLevel = NervousSystemConstants.indexFromSegmentLabel("L3");
-        if (index > clarkesNucleiLowerLevel) {
-            leftHalf.spinalNerve
-                    .addElement(organism.nervousSystem.spinalCord.segments[clarkesNucleiLowerLevel - 1].leftHalf.grayMatter.clarkesNucleus
-                            .getNeuralInputs()[index - clarkesNucleiLowerLevel]);
-            rightHalf.spinalNerve
-                    .addElement(organism.nervousSystem.spinalCord.segments[clarkesNucleiLowerLevel - 1].rightHalf.grayMatter.clarkesNucleus
-                            .getNeuralInputs()[index - clarkesNucleiLowerLevel]);
+        int clarkesNucleiLowerLevel = NervousSystemConstants.clarkesNucleiLowerLevel;
+        int clarkesNucleiUpperLevel = NervousSystemConstants.clarkesNucleiUpperLevel;
+        if (index >= clarkesNucleiUpperLevel) {
+            if (index <= clarkesNucleiLowerLevel) {
+                leftHalf.spinalNerve
+                        .addElement(organism.nervousSystem.spinalCord.segments[index - 1].leftHalf.grayMatter.clarkesNucleus
+                                .getNeuralInputs()[0]);
+                rightHalf.spinalNerve
+                        .addElement(organism.nervousSystem.spinalCord.segments[index - 1].rightHalf.grayMatter.clarkesNucleus
+                                .getNeuralInputs()[0]);
+            } else {
+                leftHalf.spinalNerve
+                        .addElement(organism.nervousSystem.spinalCord.segments[clarkesNucleiLowerLevel - 1].leftHalf.grayMatter.clarkesNucleus
+                                .getNeuralInputs()[index - clarkesNucleiLowerLevel]);
+                rightHalf.spinalNerve
+                        .addElement(organism.nervousSystem.spinalCord.segments[clarkesNucleiLowerLevel - 1].rightHalf.grayMatter.clarkesNucleus
+                                .getNeuralInputs()[index - clarkesNucleiLowerLevel]);
+            }
         }
     }
 
