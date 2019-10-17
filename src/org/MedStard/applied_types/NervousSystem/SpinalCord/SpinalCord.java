@@ -1,5 +1,6 @@
 package org.MedStard.applied_types.NervousSystem.SpinalCord;
 
+import org.MedStard.applied_types.Human.Organism;
 import org.MedStard.applied_types.NervousSystem.Brain;
 import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment.SpinalSegment;
 import org.MedStard.constants.NervousSystemConstants;
@@ -11,11 +12,11 @@ import org.MedStard.types.AbstractTypes.Initializable;
 public class SpinalCord implements Initializable {
     public SpinalSegment[] segments;
 
-    public SpinalCord(Brain brain) {
+    public SpinalCord(Organism organism) {
         segments = new SpinalSegment[NervousSystemConstants.SpinalSegmentsCount];
         // Constructing the spinal cord from up to the bottom
         for (int i = 0; i < segments.length; i++) {
-            segments[i] = new SpinalSegment(i + 1, brain, this);  // Index is 1 based
+            segments[i] = new SpinalSegment(organism, i + 1);  // Index is 1 based
         }
     }
 

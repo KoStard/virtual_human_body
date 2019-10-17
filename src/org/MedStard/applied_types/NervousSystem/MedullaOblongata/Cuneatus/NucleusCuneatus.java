@@ -1,5 +1,6 @@
 package org.MedStard.applied_types.NervousSystem.MedullaOblongata.Cuneatus;
 
+import org.MedStard.applied_types.Human.Organism;
 import org.MedStard.constants.NervousSystemConstants;
 import org.MedStard.enums.Sides;
 import org.MedStard.types.NeuralSystem.Nucleus;
@@ -10,7 +11,7 @@ public class NucleusCuneatus extends Nucleus {
     public NucleusCuneatusSubnucleus[] subnuclei;
     public FasciculusCuneatus fasciculusCuneatus;
 
-    public NucleusCuneatus(Sides side) {
+    public NucleusCuneatus(Organism organism, Sides side) {
         super(String.format("%s nucleus cuneatus", side.label));
         this.side = side;
         fasciculusCuneatus = new FasciculusCuneatus(side);

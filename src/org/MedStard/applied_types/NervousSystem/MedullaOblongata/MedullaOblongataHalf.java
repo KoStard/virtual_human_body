@@ -1,5 +1,6 @@
 package org.MedStard.applied_types.NervousSystem.MedullaOblongata;
 
+import org.MedStard.applied_types.Human.Organism;
 import org.MedStard.applied_types.NervousSystem.MedullaOblongata.Cuneatus.NucleusCuneatus;
 import org.MedStard.applied_types.NervousSystem.MedullaOblongata.Gracilis.NucleusGracilis;
 import org.MedStard.enums.Sides;
@@ -10,10 +11,10 @@ public class MedullaOblongataHalf implements Initializable {
     public NucleusGracilis nucleusGracilis;
     public NucleusCuneatus nucleusCuneatus;
 
-    public MedullaOblongataHalf(Sides side) {
+    public MedullaOblongataHalf(Organism organism, Sides side) {
         this.side = side;
-        nucleusGracilis = new NucleusGracilis(side);
-        nucleusCuneatus = new NucleusCuneatus(side);
+        nucleusGracilis = new NucleusGracilis(organism, side);
+        nucleusCuneatus = new NucleusCuneatus(organism, side);
     }
 
     @Override

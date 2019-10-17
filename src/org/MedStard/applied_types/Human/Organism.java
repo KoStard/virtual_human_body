@@ -7,7 +7,7 @@ public class Organism implements Initializable {
     public NervousSystem nervousSystem;
 
     public Organism() {
-        nervousSystem = new NervousSystem();
+        nervousSystem = new NervousSystem(this);
 
         initialize();
     }

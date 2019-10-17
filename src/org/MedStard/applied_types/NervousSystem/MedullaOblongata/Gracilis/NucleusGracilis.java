@@ -1,5 +1,6 @@
 package org.MedStard.applied_types.NervousSystem.MedullaOblongata.Gracilis;
 
+import org.MedStard.applied_types.Human.Organism;
 import org.MedStard.constants.NervousSystemConstants;
 import org.MedStard.enums.Sides;
 import org.MedStard.types.NeuralSystem.Nucleus;
@@ -9,7 +10,7 @@ public class NucleusGracilis extends Nucleus {
     public NucleusGracilisSubnucleus[] subnuclei;
     public FasciculusGracilis fasciculusGracilis; // Do we need this at all? The content is not stable
 
-    public NucleusGracilis(Sides side) {
+    public NucleusGracilis(Organism organism, Sides side) {
         super(String.format("%s nucleus gracilis", side.label));
         this.side = side;
         fasciculusGracilis = new FasciculusGracilis(side);

@@ -1,5 +1,6 @@
 package org.MedStard.applied_types.NervousSystem;
 
+import org.MedStard.applied_types.Human.Organism;
 import org.MedStard.applied_types.NervousSystem.MedullaOblongata.MedullaOblongata;
 import org.MedStard.types.AbstractTypes.Initializable;
 
@@ -11,8 +12,8 @@ import org.MedStard.types.AbstractTypes.Initializable;
 public class BrainStem implements Initializable {
     public MedullaOblongata medullaOblongata;
 
-    public BrainStem() {
-        medullaOblongata = new MedullaOblongata();
+    public BrainStem(Organism organism) {
+        medullaOblongata = new MedullaOblongata(organism);
     }
 
     @Override
