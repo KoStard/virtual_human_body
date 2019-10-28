@@ -1,7 +1,6 @@
 package org.MedStard.applied_types.NervousSystem.SpinalCord;
 
 import org.MedStard.applied_types.Human.Organism;
-import org.MedStard.applied_types.NervousSystem.Brain;
 import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment.SpinalSegment;
 import org.MedStard.constants.NervousSystemConstants;
 import org.MedStard.types.AbstractTypes.Initializable;

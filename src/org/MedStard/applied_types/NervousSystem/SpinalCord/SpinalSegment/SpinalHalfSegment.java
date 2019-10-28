@@ -1,8 +1,6 @@
 package org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment;
 
 import org.MedStard.applied_types.Human.Organism;
-import org.MedStard.applied_types.NervousSystem.Brain;
-import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalCord;
 import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalNerve;
 import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment.GrayMatter.SpinalHalfSegmentGrayMatter;
 import org.MedStard.enums.Sides;

@@ -1,6 +1,5 @@
 package org.MedStard.types.AbstractTypes;
 
-import javax.swing.text.Element;
 import java.util.Vector;
 
 public interface Group<ElementType extends GroupElement<?>> {

@@ -1,7 +1,6 @@
 package org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment;
 
 import org.MedStard.applied_types.Human.Organism;
-import org.MedStard.applied_types.NervousSystem.Brain;
 import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalCord;
 import org.MedStard.enums.Sides;
 import org.MedStard.types.NeuralSystem.NeuralPathGroup;
@@ -14,7 +13,6 @@ public class SpinalHalfSegmentWhiteMatter extends NeuralPathGroup {
 
     public SpinalHalfSegmentWhiteMatter(int index, Sides side, Organism organism) {
         super(String.format("spinal segment N%d %s white matter", index, side.label));
-        this.spinalCord = spinalCord;
         anteriorFuniculus = new SpinalSegmentAnteriorFuniculus(index, side, organism);
         lateralFuniculus = new SpinalSegmentLateralFuniculus(index, side, organism);
         posteriorFuniculus = new SpinalSegmentPosteriorFuniculus(index, side, organism);

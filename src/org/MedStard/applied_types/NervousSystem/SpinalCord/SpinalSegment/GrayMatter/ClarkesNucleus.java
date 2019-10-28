@@ -1,12 +1,11 @@
 package org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment.GrayMatter;
 
+import javax.management.InvalidAttributeValueException;
+
 import org.MedStard.constants.NervousSystemConstants;
 import org.MedStard.enums.Sides;
 import org.MedStard.types.NeuralSystem.Nucleus;
 import org.MedStard.types.NeuralSystem.NucleusElement;
-import org.MedStard.types.NeuralSystem.SubNucleus;
-
-import javax.management.InvalidAttributeValueException;
 
 /**
  * Clarke's Nucleus in the posterior horn
