@@ -1,4 +1,4 @@
-- Register owners in the NeuralPaths +
+- + Register owners in the NeuralPaths
 - Dorsal column–medial lemniscus pathway - https://en.wikipedia.org/wiki/Dorsal_column–medial_lemniscus_pathway
 - Add divisions when some neural path is leaving the group - can be used for selective stimulation 
 - Add receptors!
@@ -8,5 +8,5 @@
 - Maybe - add fillInto method -> add all elements to the target group
 - Multiple sources and targets for neural pathways - stimulation of any source will trigger every target
 - Return vector of stimulated elements when calling stimulate
-- Automatically handle owners/children - this is a problem
+- + Automatically handle owners/children - this is a problem
 - Use generics in the base classes - getElements...

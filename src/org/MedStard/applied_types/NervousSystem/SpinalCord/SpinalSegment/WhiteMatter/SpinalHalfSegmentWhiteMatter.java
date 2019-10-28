@@ -1,4 +1,4 @@
-package org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment;
+package org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment.WhiteMatter;
 
 import org.MedStard.applied_types.Human.Organism;
 import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalCord;

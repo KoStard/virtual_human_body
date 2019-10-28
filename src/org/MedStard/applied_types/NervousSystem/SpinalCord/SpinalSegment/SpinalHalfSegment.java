@@ -3,6 +3,7 @@ package org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment;
 import org.MedStard.applied_types.Human.Organism;
 import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalNerve;
 import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment.GrayMatter.SpinalHalfSegmentGrayMatter;
+import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment.WhiteMatter.SpinalHalfSegmentWhiteMatter;
 import org.MedStard.enums.Sides;
 import org.MedStard.types.AbstractTypes.Initializable;
 

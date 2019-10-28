@@ -1,4 +1,4 @@
-package org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment;
+package org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment.WhiteMatter;
 
 import java.util.Vector;
 
@@ -6,6 +6,7 @@ import org.MedStard.applied_types.Human.Organism;
 import org.MedStard.applied_types.NervousSystem.MedullaOblongata.Cuneatus.NucleusCuneatusSubnucleus;
 import org.MedStard.applied_types.NervousSystem.MedullaOblongata.Gracilis.NucleusGracilisSubnucleus;
 import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment.GrayMatter.ClarkesSubnucleus;
+import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment.SpinalSegment;
 import org.MedStard.constants.NervousSystemConstants;
 import org.MedStard.enums.Sides;
 import org.MedStard.types.NeuralSystem.NeuralPathGroup;
