@@ -10,16 +10,20 @@ public class MedullaOblongataHalf implements Initializable {
     public Sides side;
     public NucleusGracilis nucleusGracilis;
     public NucleusCuneatus nucleusCuneatus;
+    public LowerPeduncle lowerPeduncle;
+
 
     public MedullaOblongataHalf(Organism organism, Sides side) {
         this.side = side;
         nucleusGracilis = new NucleusGracilis(organism, side);
         nucleusCuneatus = new NucleusCuneatus(organism, side);
+        lowerPeduncle = new LowerPeduncle(organism, side);
     }
 
     @Override
     public void initialize() {
         nucleusGracilis.initialize();
         nucleusCuneatus.initialize();
+        lowerPeduncle.initialize();
     }
 }

@@ -10,3 +10,5 @@
 - Return vector of stimulated elements when calling stimulate
 - + Automatically handle owners/children - this is a problem
 - Use generics in the base classes - getElements...
+# Maybe
+- Add medulla oblongata white matter

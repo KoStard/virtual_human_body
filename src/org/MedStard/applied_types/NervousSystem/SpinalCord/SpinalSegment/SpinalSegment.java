@@ -6,8 +6,11 @@ import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment.GrayMat
 import org.MedStard.constants.NervousSystemConstants;
 import org.MedStard.enums.Sides;
 import org.MedStard.types.AbstractTypes.Initializable;
+import org.MedStard.types.AbstractTypes.Symmetric;
 
-public class SpinalSegment implements Initializable {
+import java.security.InvalidKeyException;
+
+public class SpinalSegment implements Initializable, Symmetric<SpinalHalfSegment> {
     public int index;
     public SpinalHalfSegment leftHalf;
     public SpinalHalfSegment rightHalf;
@@ -29,7 +32,7 @@ public class SpinalSegment implements Initializable {
         int clarkesNucleiUpperLevel = NervousSystemConstants.clarkesNucleiUpperLevel;
         if (index >= clarkesNucleiUpperLevel) {
             if (index <= clarkesNucleiLowerLevel) {
-                SpinalSegment segment = organism.nervousSystem.spinalCord.segments[index - 1];
+                SpinalSegment segment = organism.nervousSystem.spinalCord.getSegmentByIndex(index);
                 leftHalf.spinalNerve
                         .addElement(((ClarkesSubnucleus) segment.leftHalf.grayMatter.clarkesNucleus
                                 .getElementByIndex(0)).muscleStretchAndTensionNerveFibers);
@@ -37,7 +40,7 @@ public class SpinalSegment implements Initializable {
                         .addElement(((ClarkesSubnucleus) segment.rightHalf.grayMatter.clarkesNucleus
                                 .getElementByIndex(0)).muscleStretchAndTensionNerveFibers);
             } else {
-                SpinalSegment segment = organism.nervousSystem.spinalCord.segments[clarkesNucleiLowerLevel - 1];
+                SpinalSegment segment = organism.nervousSystem.spinalCord.getSegmentByIndex(clarkesNucleiLowerLevel);
                 leftHalf.spinalNerve
                         .addElement(((ClarkesSubnucleus) segment.leftHalf.grayMatter.clarkesNucleus
                                 .getElementByIndex(index - clarkesNucleiLowerLevel)).muscleStretchAndTensionNerveFibers);
@@ -61,5 +64,16 @@ public class SpinalSegment implements Initializable {
         leftHalf.initialize();
         rightHalf.initialize();
         initializeSpinalNerves();
+    }
+
+    @Override
+    public SpinalHalfSegment getConstituentElement(Sides side) throws InvalidKeyException {
+        if (side == Sides.Left) {
+            return leftHalf;
+        } else if (side == Sides.Right) {
+            return rightHalf;
+        } else {
+            throw new InvalidKeyException(String.format("Invalid side %s", side.label));
+        }
     }
 }

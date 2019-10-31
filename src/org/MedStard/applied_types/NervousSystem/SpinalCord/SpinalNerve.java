@@ -13,4 +13,9 @@ public class SpinalNerve extends NeuralPathGroup {
     public SpinalNerve(int index, Sides side, Organism organism) {
         super(String.format("N%d %s spinal nerve", index, side.label));
     }
+
+    @Override
+    public void initialize() {
+
+    }
 }

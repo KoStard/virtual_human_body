@@ -12,7 +12,7 @@ public class SpinalHalfSegmentGrayMatter extends Nucleus {
     public ClarkesNucleus clarkesNucleus;
     public SpinalHalfSegmentGrayMatter(int index, Sides side, Organism organism) {
         super(String.format("spinal segment N%d %s half gray matter", index, side.label));
-        clarkesNucleus = new ClarkesNucleus(side, index);
+        clarkesNucleus = new ClarkesNucleus(organism, side, index);
         addElement(clarkesNucleus);
     }
 }

@@ -1,12 +1,17 @@
 package org.MedStard.instances.test1;
 
 import org.MedStard.applied_types.Human.Organism;
-import org.MedStard.enums.Sides;
+
+import javax.management.InvalidAttributeValueException;
 
 public class Test1 {
     public Test1() {
         Organism organism = new Organism();
-        organism.nervousSystem.spinalCord.segments[20].getSpinalNerve(Sides.Left).stimulate();
+        try {
+            organism.nervousSystem.spinalCord.getSegmentByIndex(21).leftHalf.grayMatter.clarkesNucleus.getInputsWithSegmentIndex(21).stimulate();
+        } catch (InvalidAttributeValueException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {

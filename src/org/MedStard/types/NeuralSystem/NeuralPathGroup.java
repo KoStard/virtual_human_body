@@ -27,12 +27,16 @@ public abstract class NeuralPathGroup implements Excitable, Named, Group<NeuralP
 		setName(name);
 	}
 
-	@Override
-	public void initialize() {
-		for (NeuralPathElement e : elements) {
-			e.initialize();
-		}
-	}
+	/**
+	 * Same NeuralPath can be included in multiple NeuralPathGroups, so we have to
+	 * initialize these where we create them!
+	 */
+//	@Override
+//	public void initialize() {
+//		for (NeuralPathElement e : elements) {
+//			e.initialize();
+//		}
+//	}
 
 	@Override
 	public void stimulate() {

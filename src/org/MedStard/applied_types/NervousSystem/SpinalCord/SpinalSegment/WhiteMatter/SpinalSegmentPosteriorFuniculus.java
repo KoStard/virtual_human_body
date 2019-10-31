@@ -68,7 +68,7 @@ public class SpinalSegmentPosteriorFuniculus extends NeuralPathGroup {
         int clarkesNucleiLowerLevel = NervousSystemConstants.indexFromSegmentLabel("L3");
         if (index >= clarkesNucleiLowerLevel) { // Adding them in the L3 white matter too
             Vector<NucleusElement> clarkesSubnuclei;
-            SpinalSegment lastSegmentWithClarkesNuclei = organism.nervousSystem.spinalCord.segments[clarkesNucleiLowerLevel - 1];
+            SpinalSegment lastSegmentWithClarkesNuclei = organism.nervousSystem.spinalCord.getSegmentByIndex(clarkesNucleiLowerLevel);
             if (side == Sides.Left) {
                 clarkesSubnuclei = lastSegmentWithClarkesNuclei.leftHalf.grayMatter.clarkesNucleus.getElements();
             } else {
@@ -84,6 +84,5 @@ public class SpinalSegmentPosteriorFuniculus extends NeuralPathGroup {
     public void initialize() {
         addFasciculusGracilisAndCuneatus();
         addMuscleStretchAndTensionNerveFibers();
-        super.initialize();
     }
 }

@@ -9,7 +9,7 @@ import org.MedStard.types.AbstractTypes.Initializable;
  * Containing 31 segments
  */
 public class SpinalCord implements Initializable {
-    public SpinalSegment[] segments;
+    private SpinalSegment[] segments;
 
     public SpinalCord(Organism organism) {
         segments = new SpinalSegment[NervousSystemConstants.SpinalSegmentsCount];
@@ -24,5 +24,9 @@ public class SpinalCord implements Initializable {
         for (SpinalSegment s : segments) {
             s.initialize();
         }
+    }
+
+    public SpinalSegment getSegmentByIndex(int index) {
+        return segments[index-1];
     }
 }

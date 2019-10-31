@@ -20,4 +20,11 @@ public class SpinalHalfSegmentWhiteMatter extends NeuralPathGroup {
         addElement(lateralFuniculus);
         addElement(posteriorFuniculus);
     }
+
+    @Override
+    public void initialize() {
+        anteriorFuniculus.initialize();
+        lateralFuniculus.initialize();
+        posteriorFuniculus.initialize();
+    }
 }

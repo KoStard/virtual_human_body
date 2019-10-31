@@ -1,5 +1,6 @@
 package org.MedStard.applied_types.NervousSystem.Cerebellum;
 
+import org.MedStard.applied_types.Human.Organism;
 import org.MedStard.enums.Sides;
 import org.MedStard.types.NeuralSystem.Nucleus;
 
@@ -11,13 +12,14 @@ public class Cerebellum extends Nucleus {
     public Paravermis rightParavermis;
     public Hemisphere leftHemisphere;
     public Hemisphere rightHemisphere;
-    public Cerebellum() {
+    private Organism organism;
+    public Cerebellum(Organism organism) {
         super("Cerebellum");
         vermis = new Vermis();
-        leftParavermis = new Paravermis(Sides.Left);
-        rightParavermis = new Paravermis(Sides.Right);
-        leftHemisphere = new Hemisphere(Sides.Left);
-        rightHemisphere = new Hemisphere(Sides.Right);
+        leftParavermis = new Paravermis(organism, Sides.Left);
+        rightParavermis = new Paravermis(organism, Sides.Right);
+        leftHemisphere = new Hemisphere(organism, Sides.Left);
+        rightHemisphere = new Hemisphere(organism, Sides.Right);
         addElement(vermis);
         addElement(leftParavermis);
         addElement(rightParavermis);

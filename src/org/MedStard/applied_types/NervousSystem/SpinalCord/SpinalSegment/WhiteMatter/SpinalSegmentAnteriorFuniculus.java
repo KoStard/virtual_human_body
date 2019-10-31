@@ -8,4 +8,9 @@ public class SpinalSegmentAnteriorFuniculus extends NeuralPathGroup {
     public SpinalSegmentAnteriorFuniculus(int index, Sides side, Organism organism) {
         super(String.format("spinal segment N%d %s white matter anterior funiculus", index, side.label));
     }
+
+    @Override
+    public void initialize() {
+
+    }
 }

@@ -9,4 +9,9 @@ public class FasciculusCuneatus extends NeuralPathGroup {
         super(String.format("%s fasciculus cuneatus", side.label));
         this.side = side;
     }
+
+    @Override
+    public void initialize() {
+
+    }
 }
