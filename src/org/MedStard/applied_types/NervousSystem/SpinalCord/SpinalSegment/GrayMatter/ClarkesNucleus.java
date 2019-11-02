@@ -3,6 +3,7 @@ package org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment.GrayMa
 import javax.management.InvalidAttributeValueException;
 
 import org.MedStard.applied_types.Human.Organism;
+import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment.WhiteMatter.MuscleStretchAndTensionNerveFibers;
 import org.MedStard.constants.NervousSystemConstants;
 import org.MedStard.enums.Sides;
 import org.MedStard.types.NeuralSystem.Nucleus;
@@ -18,7 +19,7 @@ import org.MedStard.types.NeuralSystem.NucleusElement;
  * Fibers from regions below L3 are entering dorsal column and ascend to L3 for synapting with L3 Clarke's nucleus
  * Dorsal column damages below L3 can lead to loss of coordination of the legs - cerebellar damage appearance
  * <p>
- * secondary fibers - Lateral funiculus, inferior peduncle, spinocerebellum (vermis, paravermis) in a topographic fashion
+ * secondary fibers - Lateral funiculus, inferior peduncle, spinocerebellum (anterior lobe and paramedian lobule) in a topographic fashion
  * <p>
  * Source
  * https://www.dartmouth.edu/~rswenson/NeuroSci/chapter_7A.html#Dorsal_spinocerebellar

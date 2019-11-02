@@ -1,4 +1,4 @@
-package org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment.GrayMatter;
+package org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment.WhiteMatter;
 
 import org.MedStard.enums.Sides;
 import org.MedStard.types.NeuralSystem.NeuralPath;

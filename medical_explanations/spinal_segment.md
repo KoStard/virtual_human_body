@@ -6,10 +6,11 @@ Funiculi:
 - lateral
     - Sensory
         - spinocerebellar tract
-            - ventral/dorsal 
+            - ventral (-)/dorsal (+) 
             - ipsilateral
             - proprioceptive - from Golgi tendon organs and muscle spindles
             - dorsal - Flechsig's
+            - ventral - Gowers
         - spino-olivary tract
         - spinotectal tract
         - lateral spinothalamic tract
@@ -28,3 +29,5 @@ Funiculi:
 
 Some unconscious proprioception pathways arise from spinal interneurons, that participate in reflexes.
 https://www.dartmouth.edu/~rswenson/NeuroSci/chapter_7A.html#Dorsal_spinocerebellar
+http://www.neilyunusov.com/spinal-tracts/
+http://www.learnneurosurgery.com/

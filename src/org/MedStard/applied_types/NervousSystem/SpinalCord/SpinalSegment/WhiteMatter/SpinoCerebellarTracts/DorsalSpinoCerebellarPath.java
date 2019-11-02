@@ -1,9 +1,13 @@
-package org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment.WhiteMatter;
+package org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment.WhiteMatter.SpinoCerebellarTracts;
 
 import org.MedStard.applied_types.Human.Organism;
 import org.MedStard.enums.Sides;
 import org.MedStard.types.NeuralSystem.NeuralPath;
 
+/**
+ * Unconscious sensation
+ * From Clarke's nucleus to the spinocerebellum
+ */
 public class DorsalSpinoCerebellarPath extends NeuralPath {
     private Organism organism;
     private Sides side;

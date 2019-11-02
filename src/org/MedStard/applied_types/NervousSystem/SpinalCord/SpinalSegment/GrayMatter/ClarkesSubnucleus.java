@@ -5,7 +5,8 @@ import org.MedStard.applied_types.NervousSystem.MedullaOblongata.MedullaOblongat
 import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalCord;
 import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment.SpinalHalfSegment;
 import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment.SpinalSegment;
-import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment.WhiteMatter.DorsalSpinoCerebellarPath;
+import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment.WhiteMatter.SpinoCerebellarTracts.DorsalSpinoCerebellarPath;
+import org.MedStard.applied_types.NervousSystem.SpinalCord.SpinalSegment.WhiteMatter.MuscleStretchAndTensionNerveFibers;
 import org.MedStard.enums.Sides;
 import org.MedStard.types.NeuralSystem.SubNucleus;
 

@@ -62,7 +62,7 @@ public class SpinalSegmentPosteriorFuniculus extends NeuralPathGroup {
         }
     }
 
-    private void addMuscleStretchAndTensionNerveFibers() {
+    private void addMuscleStretchAndTensionNerveFibers () {
         // Adding muscle stretch and tension nerve fibers for segments lower than L3 segment - will enter Clarke's nucleus in the L3 segment.
         // Ipsilateral
         int clarkesNucleiLowerLevel = NervousSystemConstants.indexFromSegmentLabel("L3");
